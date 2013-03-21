@@ -57,7 +57,7 @@ public class CafeRouteBuilderTest extends CamelTestSupport {
         order.addItem(DrinkType.ESPRESSO, 2, true);
         order.addItem(DrinkType.CAPPUCCINO, 2, false);
         
-        coldDrinks.expectedBodiesReceived(new OrderItem(order, DrinkType.ESPRESSO, 2, true));
+        coldDrinks.expectedBodiesReceived(new OrderItem(order, DrinkType.ESPRESSO, 3, true));
         hotDrinks.expectedBodiesReceived(new OrderItem(order, DrinkType.CAPPUCCINO, 2, false));
         
         template.sendBody("direct:cafe", order);
